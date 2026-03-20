@@ -5,7 +5,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project-root/
@@ -43,7 +43,7 @@ project-root/
 
 ---
 
-## 🛠 Installation
+## Installation
 
 ```bash
 pip install -r requirements.txt
