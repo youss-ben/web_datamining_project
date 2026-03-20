@@ -51,12 +51,12 @@ python -m spacy download en_core_web_sm
 
 # For RAG (optional):
 # Install Ollama: https://ollama.com
-ollama pull gemma:2b
+ollama pull llama3.1:8b
 ```
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
 # Step 1 — Crawl + Extract
@@ -81,7 +81,7 @@ python src/rag/rag_pipeline.py
 
 ---
 
-## 📊 Key Results
+## Key Results
 
 | Metric | Value | Target |
 |--------|-------|--------|
