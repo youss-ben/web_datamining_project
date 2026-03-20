@@ -1,0 +1,420 @@
+@prefix ex: <http://example.org/private_kb/> .
+@prefix ns1: <http://example.org/private_kb/stephen.e.cole@> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:1st_moon_astronauts ex:landIn ex:Rimae_Bode .
+
+ex:Andrew_Jones ex:publish ex:ESA ;
+    owl:sameAs wd:Q728119 .
+
+ex:Anthony_Wood ex:join ex:Space.com ;
+    ex:joinIn "April 2025"^^xsd:string ;
+    owl:sameAs wd:Q691873 .
+
+ex:Artemis_Latest ex:rollOn "March 19"^^xsd:string .
+
+ex:Astronauts ex:spend "a week"^^xsd:string ;
+    ex:transferTo ex:the_Starship_Human_Landing_System ;
+    owl:sameAs wd:Q11631 .
+
+ex:BepiColombo ex:reach ex:Mercury ;
+    owl:sameAs wd:Q113169 .
+
+ex:Bill_Nelson ex:tell ex:Navias ;
+    owl:sameAs wd:Q358437 .
+
+ex:Boeing ex:build ex:EUS ;
+    owl:sameAs wd:Q66 .
+
+ex:Brett_Tingley ex:publish ex:Donald_Trump .
+
+ex:CAPSTONE ex:exploreFor "six months"^^xsd:string ;
+    owl:sameAs wd:Q85160256 .
+
+ex:Charles ex:visitOn ex:Earth ;
+    owl:sameAs wd:Q2958359 .
+
+ex:Cheryl_Warner ns1:nasa.gov ex:Jenny_Knotts_Johnson_Space_Center .
+
+ex:China ex:joinBy ex:Julian_Dossett_Published_- ;
+    owl:sameAs wd:Q148 .
+
+ex:Congress ex:advanceOn "Wednesday (March 4"^^xsd:string ;
+    owl:sameAs wd:Q10225 .
+
+ex:Cubesat ex:moveFrom ex:the_Terran_Orbital_Corporation ;
+    ex:moveOn "May 9, 2022"^^xsd:string ;
+    ex:moveTo ex:Rocket_Lab_Launch_Complex_1 ;
+    owl:sameAs wd:Q1142930 .
+
+ex:Derrol_Nail ex:sayDuring "the webcast of this morning's"^^xsd:string .
+
+ex:Doug_Cooke ex:sayOn "May 24, 2011"^^xsd:string .
+
+ex:Gene_Kranz ex:returnFor "May 21, 2025"^^xsd:string ;
+    owl:sameAs wd:Q711493 .
+
+ex:Harvest_Moon ex:occurIn ex:the_Southern_Hemisphere,
+        "March"^^xsd:string,
+        "September"^^xsd:string ;
+    owl:sameAs wd:Q785815 .
+
+ex:ISS ex:hostIn "quarter-century"^^xsd:string ;
+    ex:playFor "decades"^^xsd:string ;
+    owl:sameAs wd:Q23175558 .
+
+ex:Isaacman ex:tell ex:Space.com ;
+    owl:sameAs wd:Q37500367 .
+
+ex:Jared_Isaacman ex:announceOn "Friday"^^xsd:string ;
+    owl:sameAs wd:Q6160001 .
+
+ex:Jeff ex:liveIn ex:Bend ;
+    owl:sameAs wd:Q18609696 .
+
+ex:Jim_Bridenstine ex:tellOn "the day"^^xsd:string ;
+    owl:sameAs wd:Q3601035 .
+
+ex:Jim_Lovell ex:dieBy ex:Mike_Wall ;
+    owl:sameAs wd:Q111240 .
+
+ex:John_Lithgow ex:launchBy ex:Robert_Z._Pearlman ;
+    owl:sameAs wd:Q311271 .
+
+ex:Koch ex:tell ex:Space.com ;
+    owl:sameAs wd:Q1348074 .
+
+ex:Lauren_DeCicca ex:captureOn "March 3"^^xsd:string ;
+    owl:sameAs wd:Q124656559 .
+
+ex:Lockheed_Martin ex:winIn "August 2006"^^xsd:string ;
+    owl:sameAs wd:Q7240 .
+
+ex:Lori_Glaze ex:sayOn "Friday"^^xsd:string ;
+    owl:sameAs wd:Q23769992 .
+
+ex:Lunokhod_2 ex:setFor "more than 40 years"^^xsd:string ;
+    owl:sameAs wd:Q1051675 .
+
+ex:Mike_Wall_Published_-_Missions_-_-_NASA ex:rollBy ex:Josh_Dinner ;
+    ex:rollOn "March 19"^^xsd:string .
+
+ex:Nelson ex:tell ex:Space.com ;
+    owl:sameAs wd:Q2782528 .
+
+ex:OIG ex:releaseOver "the past five years"^^xsd:string ;
+    owl:sameAs wd:Q177479 .
+
+ex:Paul_Van_Hoeydonck ex:dieOn "May 3"^^xsd:string ;
+    owl:sameAs wd:Q553403 .
+
+ex:Reid_Wiseman ex:announceIn "August 2022"^^xsd:string ;
+    owl:sameAs wd:Q3116390 .
+
+ex:STarship ex:beUnlike ex:SLS ;
+    owl:sameAs wd:Q15706519 .
+
+ex:Samantha_Mathewson ex:join ex:Space.com .
+
+ex:Sean_Duffy ex:announceIn "October"^^xsd:string ;
+    owl:sameAs wd:Q1729888 .
+
+ex:SpaceX ex:develop ex:Human_Landing_Systems ;
+    ex:doWith ex:Starship ;
+    ex:makeSince "May 2021"^^xsd:string ;
+    ex:receiveIn "April 2021"^^xsd:string ;
+    owl:sameAs wd:Q193701 .
+
+ex:Space_Launch_System ex:carry ex:Mars ;
+    owl:sameAs wd:Q64127 .
+
+ex:The_Human_Landing_System ex:takeFrom ex:Gateway .
+
+ex:The_SLS_Program ex:workWith ex:the_Orion_Program .
+
+ex:The_Soviet_Union ex:remainThrough "the 1960s"^^xsd:string ;
+    owl:sameAs wd:Q15180 .
+
+ex:The_United_States ex:sendIn "the 1960s"^^xsd:string ;
+    owl:sameAs wd:Q30 .
+
+ex:Trump ex:direct ex:NASA ;
+    owl:sameAs wd:Q16944413 .
+
+ex:Tyvak_Nano-Satellite_Systems ex:buildIn ex:Irvine ;
+    owl:sameAs wd:Q22078253 .
+
+ex:US_Mint ex:beginBy ex:Robert_Z._Pearlman ;
+    owl:sameAs wd:Q1141049 .
+
+ex:addressThrough owl:equivalentProperty wdt:P968 .
+
+ex:announceIn owl:equivalentProperty wdt:P6949 .
+
+ex:announceOn owl:equivalentProperty wdt:P6949 .
+
+ex:astronaut owl:equivalentProperty wdt:P450 .
+
+ex:astronautBy owl:equivalentProperty wdt:P450 .
+
+ex:be owl:equivalentProperty wdt:P617 .
+
+ex:beAfter owl:equivalentProperty wdt:P138 .
+
+ex:build owl:equivalentProperty wdt:P193 .
+
+ex:buildIn owl:equivalentProperty wdt:P193 .
+
+ex:captureOn owl:equivalentProperty wdt:P4082 .
+
+ex:carry owl:equivalentProperty wdt:P3349 .
+
+ex:changeOver owl:equivalentProperty wdt:P414 .
+
+ex:completeBy owl:equivalentProperty wdt:P5349 .
+
+ex:confirm owl:equivalentProperty wdt:P1674 .
+
+ex:confirmTo owl:equivalentProperty wdt:P1674 .
+
+ex:develop owl:equivalentProperty wdt:P3094 .
+
+ex:dieBy owl:equivalentProperty wdt:P2198 .
+
+ex:dieOn owl:equivalentProperty wdt:P2198 .
+
+ex:direct owl:equivalentProperty wdt:P633 .
+
+ex:doFor owl:equivalentProperty wdt:P400 .
+
+ex:doWith owl:equivalentProperty wdt:P501 .
+
+ex:engineer owl:equivalentProperty wdt:P631 .
+
+ex:exploreFor owl:equivalentProperty wdt:P5650 .
+
+ex:hintIn owl:equivalentProperty wdt:P13991 .
+
+ex:hostIn owl:equivalentProperty wdt:P2975 .
+
+ex:invite owl:equivalentProperty wdt:P9078 .
+
+ex:issueIn owl:equivalentProperty wdt:P562 .
+
+ex:join owl:equivalentProperty wdt:P2738 .
+
+ex:joinBy owl:equivalentProperty wdt:P2738 .
+
+ex:joinIn owl:equivalentProperty wdt:P2738 .
+
+ex:landIn owl:equivalentProperty wdt:P620 .
+
+ex:launch owl:equivalentProperty wdt:P619 .
+
+ex:launchBy owl:equivalentProperty wdt:P619 .
+
+ex:launchOn owl:equivalentProperty wdt:P619 .
+
+ex:liveIn owl:equivalentProperty wdt:P4138 .
+
+ex:makeSince owl:equivalentProperty wdt:P3047 .
+
+ex:missBy owl:equivalentProperty wdt:P531 .
+
+ex:moveOn owl:equivalentProperty wdt:P756 .
+
+ex:moveTo owl:equivalentProperty wdt:P756 .
+
+ex:nameAfter owl:equivalentProperty wdt:P407 .
+
+ex:occurIn owl:equivalentProperty wdt:P837 .
+
+ex:orbit owl:equivalentProperty wdt:P621 .
+
+ex:planFor owl:equivalentProperty wdt:P196 .
+
+ex:playFor owl:equivalentProperty wdt:P536 .
+
+ex:publish owl:equivalentProperty wdt:P123 .
+
+ex:reach owl:equivalentProperty wdt:P4690 .
+
+ex:receiveIn owl:equivalentProperty wdt:P166 .
+
+ex:releaseOver owl:equivalentProperty wdt:P406 .
+
+ex:reportIn owl:equivalentProperty wdt:P561 .
+
+ex:retireAfter owl:equivalentProperty wdt:P730 .
+
+ex:rollBy owl:equivalentProperty wdt:P3017 .
+
+ex:rollOn owl:equivalentProperty wdt:P3017 .
+
+ex:sayDuring owl:equivalentProperty wdt:P2268 .
+
+ex:sayOn owl:equivalentProperty wdt:P2268 .
+
+ex:sayTo owl:equivalentProperty wdt:P2268 .
+
+ex:see owl:equivalentProperty wdt:P374 .
+
+ex:setFor owl:equivalentProperty wdt:P808 .
+
+ex:spend owl:equivalentProperty wdt:P4447 .
+
+ex:supply owl:equivalentProperty wdt:P2286 .
+
+ex:takeFrom owl:equivalentProperty wdt:P1956 .
+
+ex:target owl:equivalentProperty wdt:P533 .
+
+ex:targetIn owl:equivalentProperty wdt:P533 .
+
+ex:tell owl:equivalentProperty wdt:P59 .
+
+ex:tellOn owl:equivalentProperty wdt:P59 .
+
+ex:the_European_Service_Module ex:sayTo ex:the_Orion_Crew_Capsule .
+
+ex:the_Interim_Cryogenic_Propulsion_Stage ex:sendTo ex:Moon .
+
+ex:the_International_Space_Station ex:orbit ex:Earth ;
+    owl:sameAs wd:Q59649329 .
+
+ex:the_Red_Planet ex:captivateSince "the earliest days"^^xsd:string ;
+    owl:sameAs wd:Q85808302 .
+
+ex:the_Space_Launch_System ex:soarInto ex:Florida .
+
+ex:the_U.S._Senate ex:direct ex:NASA ;
+    owl:sameAs wd:Q79361290 .
+
+ex:transferTo owl:equivalentProperty wdt:P3699 .
+
+ex:travelAround owl:equivalentProperty wdt:P5835 .
+
+ex:visitOn owl:equivalentProperty wdt:P1174 .
+
+ex:winIn owl:equivalentProperty wdt:P190 .
+
+ex:workWith owl:equivalentProperty wdt:P16 .
+
+ex:Apollo owl:sameAs wd:Q665812 .
+
+ex:Artemis_4 owl:sameAs wd:Q60846240 .
+
+ex:Bend owl:sameAs wd:Q37170392 .
+
+ex:Donald_Trump owl:sameAs wd:Q22686 .
+
+ex:ESA ex:supply ex:the_International_Habitation_Module ;
+    owl:sameAs wd:Q42262 .
+
+ex:Ed_Smylie owl:sameAs wd:Q134488541 .
+
+ex:Ed_Stone ex:retireAfter "50 years"^^xsd:string ;
+    owl:sameAs wd:Q113629644 .
+
+ex:Eugene_Cernan owl:sameAs wd:Q158486 .
+
+ex:Florida owl:sameAs wd:Q812 .
+
+ex:Gateway ex:orbit ex:Moon ;
+    owl:sameAs wd:Q53060 .
+
+ex:Grand_Central_Publishing owl:sameAs wd:Q18150392 .
+
+ex:Irvine owl:sameAs wd:Q49219 .
+
+ex:Mars owl:sameAs wd:Q111 .
+
+ex:Mercury owl:sameAs wd:Q613883 .
+
+ex:Mike_Wall ex:be ex:Grand_Central_Publishing ;
+    ex:publish ex:Ed_Stone,
+        ex:NASA,
+        ex:Stone ;
+    owl:sameAs wd:Q325487 .
+
+ex:Navias owl:sameAs wd:Q95141088 .
+
+ex:Rimae_Bode owl:sameAs wd:Q11834890 .
+
+ex:Rocket_Lab_Launch_Complex_1 owl:sameAs wd:Q28180879 .
+
+ex:SLS ex:doFor ex:Artemis ;
+    ex:spend "more than a decade"^^xsd:string ;
+    owl:sameAs wd:Q8012895 .
+
+ex:Starship owl:sameAs wd:Q15706519 .
+
+ex:Stone owl:sameAs wd:Q22731 .
+
+ex:Tom_Stafford owl:sameAs wd:Q982595 .
+
+ex:Vehicle_Assembly_Building owl:sameAs wd:Q901058 .
+
+ex:Venus owl:sameAs wd:Q47652 .
+
+ex:the_Southern_Hemisphere owl:sameAs wd:Q18339674 .
+
+ex:EUS owl:sameAs wd:Q8752 .
+
+ex:Moon ex:travelAround ex:Earth ;
+    owl:sameAs wd:Q16877383 .
+
+ex:Robert_Z._Pearlman owl:sameAs wd:Q7348797 .
+
+ex:Earth ex:prepareBy ex:Space.com ;
+    ex:stealFrom ex:Venus ;
+    owl:sameAs wd:Q2 .
+
+ex:NASA ex:addressThrough ex:Artemis ;
+    ex:announceIn "April 2021"^^xsd:string,
+        "December 2020"^^xsd:string ;
+    ex:announceOn "April 3, 2023"^^xsd:string ;
+    ex:astronaut ex:Eugene_Cernan ;
+    ex:astronautBy ex:Josh_Dinner,
+        ex:Robert_Z._Pearlman_Published_-_Artemis ;
+    ex:beAfter "decades"^^xsd:string ;
+    ex:completeBy ex:Josh_Dinner ;
+    ex:confirm ex:Vehicle_Assembly_Building ;
+    ex:confirmTo "April"^^xsd:string ;
+    ex:engineer ex:Ed_Smylie ;
+    ex:hintIn "early 2011"^^xsd:string ;
+    ex:invite ex:Apollo,
+        ex:Tom_Stafford ;
+    ex:issueIn "October"^^xsd:string ;
+    ex:launch ex:Artemis ;
+    ex:launchOn "November 16"^^xsd:string ;
+    ex:missBy "several years"^^xsd:string ;
+    ex:nameAfter ex:Artemis ;
+    ex:planFor ex:Artemis_4 ;
+    ex:pullFrom "decades"^^xsd:string ;
+    ex:pursueBy ex:Sharmila_Kuthunur ;
+    ex:reportIn "mid-March"^^xsd:string ;
+    ex:rollBy ex:Josh_Dinner ;
+    ex:rollOn "March 19"^^xsd:string ;
+    ex:see ex:Artemis ;
+    ex:selectIn "April 2021"^^xsd:string ;
+    ex:sendUnder ex:Artemis ;
+    ex:target "February 2022"^^xsd:string ;
+    ex:targetIn "early February and March 2026"^^xsd:string ;
+    ex:useWith ex:EUS ;
+    ex:wantAt ex:Artemis_Base_Camp ;
+    ex:wantFor "at least a month"^^xsd:string ;
+    owl:sameAs wd:Q309751 .
+
+ex:Space.com owl:sameAs wd:Q3112835 .
+
+ex:Artemis ex:changeOver "the years"^^xsd:string ;
+    ex:includeUnlike ex:Artemis ;
+    ex:launchOn "16 November 2022"^^xsd:string,
+        "Wednesday 16 November 2022"^^xsd:string ;
+    ex:sendIn "late 2022"^^xsd:string ;
+    owl:sameAs wd:Q20000154 .
+

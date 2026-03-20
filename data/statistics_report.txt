@@ -1,0 +1,3 @@
+Triplets: 65014
+Entities: 18190
+Relations: 120

@@ -1,0 +1,117 @@
+[
+  {
+    "question": "What did NASA launch?",
+    "baseline": "However, I need a bit more information. There have been numerous launches by NASA over the years, so could you please provide more context or specify which launch you are referring to (e.g., date range, mission name, type of spacecraft)? That way, I can give you a more accurate and helpful answer!",
+    "rag_status": "SUCCESS",
+    "rag_attempts": 1,
+    "rag_repaired": false,
+    "rag_sparql": "SELECT ?mission WHERE {\n  <http://example.org/private_kb/NASA> <http://example.org/private_kb/launch> ?mission .\n}",
+    "rag_vars": [
+      "mission"
+    ],
+    "rag_results": [
+      [
+        "http://example.org/private_kb/Artemis"
+      ]
+    ],
+    "rag_error": null
+  },
+  {
+    "question": "What does the SLS rocket do for Artemis?",
+    "baseline": "The Space Launch System (SLS) rocket is a critical component of NASA's Artemis program, which aims to return humans to the lunar surface by 2024. The SLS rocket serves several key purposes in support of the Artemis mission:\n\n1. **Lunar Orbit Insertion**: The SLS rocket will launch the Orion spacecra",
+    "rag_status": "SUCCESS",
+    "rag_attempts": 2,
+    "rag_repaired": true,
+    "rag_sparql": "SELECT ?result WHERE {\n  <http://example.org/private_kb/SLS> <http://example.org/private_kb/doFor> ?result .\n}",
+    "rag_vars": [
+      "result"
+    ],
+    "rag_results": [
+      [
+        "http://example.org/private_kb/Artemis"
+      ]
+    ],
+    "rag_error": null
+  },
+  {
+    "question": "What is NASA planning?",
+    "baseline": "NASA has a wide range of plans and projects in various stages of development. Here are some of the most notable ones:\n\n**Short-term plans (2020s):**\n\n1. **Artemis Program**: A mission to return humans to the lunar surface by 2024, with the goal of establishing a sustainable presence on the Moon.\n2. ",
+    "rag_status": "SUCCESS",
+    "rag_attempts": 1,
+    "rag_repaired": false,
+    "rag_sparql": "SELECT ?plan WHERE {\n  <http://example.org/private_kb/NASA> <http://example.org/private_kb/planFor> ?plan .\n}",
+    "rag_vars": [
+      "plan"
+    ],
+    "rag_results": [
+      [
+        "http://example.org/private_kb/Artemis_4"
+      ]
+    ],
+    "rag_error": null
+  },
+  {
+    "question": "What entities are connected to NASA?",
+    "baseline": "NASA (National Aeronautics and Space Administration) is a United States government agency responsible for the nation's civilian space program and for aeronautics and space research. Here are some entities that are connected to NASA:\n\n**Government Agencies:**\n\n1. **United States Department of Defense",
+    "rag_status": "SUCCESS",
+    "rag_attempts": 1,
+    "rag_repaired": false,
+    "rag_sparql": "SELECT ?connected WHERE {\n  <http://example.org/private_kb/NASA> ?predicate ?connected .\n}",
+    "rag_vars": [
+      "connected"
+    ],
+    "rag_results": [
+      [
+        "http://example.org/private_kb/Tom_Stafford"
+      ],
+      [
+        "http://example.org/private_kb/Apollo"
+      ],
+      [
+        "http://example.org/private_kb/Ed_Smylie"
+      ],
+      [
+        "http://example.org/private_kb/Artemis"
+      ],
+      [
+        "http://example.org/private_kb/Eugene_Cernan"
+      ],
+      [
+        "http://example.org/private_kb/Artemis"
+      ],
+      [
+        "several years"
+      ],
+      [
+        "November 16"
+      ],
+      [
+        "http://example.org/private_kb/Vehicle_Assembly_Building"
+      ],
+      [
+        "mid-March"
+      ]
+    ],
+    "rag_error": null
+  },
+  {
+    "question": "When was Artemis launched?",
+    "baseline": "There have been several spacecraft named \"Artemis\" over the years, so it's possible that you're referring to one of them. Here are a few possibilities:\n\n* The Soviet Union's Luna 3 mission, which included an unmanned spacecraft called \"Luna 3A\" or \"Artemis\", was launched on October 4, 1959.\n* NASA's",
+    "rag_status": "SUCCESS",
+    "rag_attempts": 1,
+    "rag_repaired": false,
+    "rag_sparql": "SELECT ?date WHERE {\n  <http://example.org/private_kb/Artemis> <http://example.org/private_kb/launchOn> ?date .\n}",
+    "rag_vars": [
+      "date"
+    ],
+    "rag_results": [
+      [
+        "16 November 2022"
+      ],
+      [
+        "Wednesday 16 November 2022"
+      ]
+    ],
+    "rag_error": null
+  }
+]

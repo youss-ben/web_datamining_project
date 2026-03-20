@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/artemis_ontology.owl"
+         xmlns="http://example.org/artemis_ontology.owl#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="http://example.org/artemis_ontology.owl"/>
+
+<owl:ObjectProperty rdf:about="#operatedBy">
+  <rdfs:domain rdf:resource="#SpaceMission"/>
+  <rdfs:range rdf:resource="#SpaceAgency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesVehicle">
+  <rdfs:domain rdf:resource="#SpaceMission"/>
+  <rdfs:range rdf:resource="#LaunchVehicle"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCrew">
+  <rdfs:domain rdf:resource="#SpaceMission"/>
+  <rdfs:range rdf:resource="#CrewMember"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#manages">
+  <rdfs:domain rdf:resource="#SpaceAgency"/>
+  <rdfs:range rdf:resource="#LaunchVehicle"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#trainsCrewFor">
+  <rdfs:domain rdf:resource="#SpaceAgency"/>
+  <rdfs:range rdf:resource="#CrewMember"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#SpaceMission">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpaceAgency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LaunchVehicle">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrewMember">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#NASA">
+  <rdf:type rdf:resource="#SpaceAgency"/>
+  <manages rdf:resource="#SLS"/>
+  <manages rdf:resource="#Orion"/>
+  <trainsCrewFor rdf:resource="#Reid_Wiseman"/>
+  <trainsCrewFor rdf:resource="#Victor_Glover"/>
+  <manages rdf:resource="#Starship_HLS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ESA">
+  <rdf:type rdf:resource="#SpaceAgency"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SLS">
+  <rdf:type rdf:resource="#LaunchVehicle"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Orion">
+  <rdf:type rdf:resource="#LaunchVehicle"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Starship_HLS">
+  <rdf:type rdf:resource="#LaunchVehicle"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Artemis_I">
+  <rdf:type rdf:resource="#SpaceMission"/>
+  <operatedBy rdf:resource="#NASA"/>
+  <usesVehicle rdf:resource="#Orion"/>
+  <usesVehicle rdf:resource="#SLS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Artemis_II">
+  <rdf:type rdf:resource="#SpaceMission"/>
+  <operatedBy rdf:resource="#NASA"/>
+  <usesVehicle rdf:resource="#Orion"/>
+  <usesVehicle rdf:resource="#SLS"/>
+  <hasCrew rdf:resource="#Victor_Glover"/>
+  <hasCrew rdf:resource="#Reid_Wiseman"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Reid_Wiseman">
+  <rdf:type rdf:resource="#CrewMember"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Victor_Glover">
+  <rdf:type rdf:resource="#CrewMember"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Artemis_III">
+  <rdf:type rdf:resource="#SpaceMission"/>
+  <operatedBy rdf:resource="#NASA"/>
+  <usesVehicle rdf:resource="#Orion"/>
+  <usesVehicle rdf:resource="#SLS"/>
+  <usesVehicle rdf:resource="#Starship_HLS"/>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#m"/>
+
+<swrl:Variable rdf:about="urn:swrl#v"/>
+
+<swrl:Variable rdf:about="urn:swrl#c"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#SpaceMission"/>
+          <swrl:argument1 rdf:resource="urn:swrl#m"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#operatedBy"/>
+              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+              <swrl:argument2 rdf:resource="urn:swrl#a"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#hasCrew"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#c"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#trainsCrewFor"/>
+          <swrl:argument1 rdf:resource="urn:swrl#a"/>
+          <swrl:argument2 rdf:resource="urn:swrl#c"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#SpaceMission"/>
+          <swrl:argument1 rdf:resource="urn:swrl#m"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#operatedBy"/>
+              <swrl:argument1 rdf:resource="urn:swrl#m"/>
+              <swrl:argument2 rdf:resource="urn:swrl#a"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#usesVehicle"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#m"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#v"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#manages"/>
+          <swrl:argument1 rdf:resource="urn:swrl#a"/>
+          <swrl:argument2 rdf:resource="urn:swrl#v"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>
