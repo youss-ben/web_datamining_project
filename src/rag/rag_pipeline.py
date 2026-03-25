@@ -31,7 +31,6 @@ KNOWN_ENTITIES = {
     "artemis":         f"{KB_BASE}Artemis",
     "artemis program": f"{KB_BASE}Artemis",
     "artemis 4":       f"{KB_BASE}Artemis_4",
-    "artemis latest":  f"{KB_BASE}Artemis_Latest",
     "nasa":            f"{KB_BASE}NASA",
     "sls":             f"{KB_BASE}SLS",
     "gateway":         f"{KB_BASE}Gateway",
@@ -59,8 +58,8 @@ EVAL_QUESTIONS = [
     "What did NASA launch?",
     "What does the SLS rocket do for Artemis?",
     "What is NASA planning?",
-    "What entities are connected to NASA?",
     "When was Artemis launched?",
+    "Who is an astronaut for NASA?",
 ]
 
 
@@ -192,38 +191,38 @@ for the given RDF graph schema. Follow strictly:
 # KEY FIX: few-shot examples now cover every question pattern we use,
 # with the exact KB URIs confirmed to exist.
 SPARQL_EXAMPLES = f"""
-EXAMPLE 1 — "What entities are connected to NASA?"
-```sparql
-SELECT ?connected WHERE {{
-  <{KB_BASE}NASA> ?predicate ?connected .
-}}
-```
-
-EXAMPLE 2 — "What did NASA launch?"
+EXAMPLE 1 — "What did NASA launch?"
 ```sparql
 SELECT ?mission WHERE {{
   <{KB_BASE}NASA> <{KB_BASE}launch> ?mission .
 }}
 ```
 
-EXAMPLE 3 — "When was Artemis launched?"
-```sparql
-SELECT ?date WHERE {{
-  <{KB_BASE}Artemis> <{KB_BASE}launchOn> ?date .
-}}
-```
-
-EXAMPLE 4 — "What does the SLS rocket do for Artemis?"
+EXAMPLE 2 — "What does the SLS rocket do for Artemis?"
 ```sparql
 SELECT ?result WHERE {{
   <{KB_BASE}SLS> <{KB_BASE}doFor> ?result .
 }}
 ```
 
-EXAMPLE 5 — "What is NASA planning?"
+EXAMPLE 3 — "What is NASA planning?"
 ```sparql
 SELECT ?plan WHERE {{
   <{KB_BASE}NASA> <{KB_BASE}planFor> ?plan .
+}}
+```
+
+EXAMPLE 4 — "When was Artemis launched?"
+```sparql
+SELECT ?date WHERE {{
+  <{KB_BASE}Artemis> <{KB_BASE}launchOn> ?date .
+}}
+```
+
+EXAMPLE 5 — "Who did NASA invite?"
+```sparql
+SELECT ?invitee WHERE {{
+  <{KB_BASE}NASA> <{KB_BASE}invite> ?invitee .
 }}
 ```
 """
@@ -441,7 +440,7 @@ def answer_with_sparql_rag(
 # ----------------------------
 
 def answer_no_rag(question: str) -> str:
-    prompt = f"Answer the following question as best as you can:\n\n{question}"
+    prompt = f"Answer the following question as concisely as possible (1-2 sentences max):\n\n{question}"
     return ask_local_llm(prompt)
 
 
@@ -470,7 +469,16 @@ def pretty_print_result(result: dict):
     print(f"\n  [Results — {len(rows)} row(s)]")
     print("  " + " | ".join(vars_))
     for r in rows[:20]:
-        print("  " + " | ".join(r))
+        clean_vals = []
+        for val in r:
+            if val.startswith("http"):
+                clean_val = re.split(r'[/#]', val)[-1].replace("_", " ")
+                clean_vals.append(clean_val)
+            else:
+                clean_vals.append(val)
+        raw_row = " | ".join(r)
+        clean_row = " | ".join(clean_vals)
+        print(f"  {raw_row}\n      => Final Response: {clean_row}")
     if len(rows) > 20:
         print(f"  ... (showing 20 of {len(rows)})")
 
@@ -489,14 +497,14 @@ def run_evaluation(g: Graph, schema_summary: str, questions: List[str]):
         print(f"\nQ{i}: {q}")
 
         baseline = answer_no_rag(q)
-        print(f"  [Baseline] {baseline[:120]}")
+        print(f"  [Baseline] {baseline}")
 
         result = answer_with_sparql_rag(g, schema_summary, q)
         pretty_print_result(result)
 
         records.append({
             "question":     q,
-            "baseline":     baseline[:300],
+            "baseline":     baseline,
             "rag_status":   "SUCCESS" if not result["error"] else "FAILED",
             "rag_attempts": result["attempts"],
             "rag_repaired": result["repaired"],
