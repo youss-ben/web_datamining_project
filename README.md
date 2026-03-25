@@ -20,8 +20,6 @@ project-root/
 │  ├─ reason/
 │  │  ├─ create_ontology.py      # family.owl generator
 │  │  └─ swrl_reasoning.py       # SWRL rules (family.owl + Artemis KB)
-│  ├─ kge/
-│  │  └─ tsne_analysis.py        # t-SNE embedding visualization
 │  └─ rag/
 │     └─ rag_pipeline.py         # NL→SPARQL with self-repair loop
 ├─ data/
@@ -43,42 +41,89 @@ project-root/
 
 ---
 
-## Installation
+## Environment / Reproducibility
 
+### 1. Requirements (`requirements.txt`)
+All Python dependencies are listed in `requirements.txt`. Install them using:
 ```bash
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
+```
 
-# For RAG (optional):
-# Install Ollama: https://ollama.com
+### 2. Instructions for running Ollama
+The RAG pipeline requires a local Large Language Model via Ollama.
+1. Install [Ollama](https://ollama.com/) for your operating system.
+2. Pull the required model:
+```bash
 ollama pull llama3.1:8b
+```
+3. Ensure the Ollama service is running in the background before starting the RAG demo.
+
+---
+
+## Hardware Requirements
+
+- **RAM**: Minimum 8GB (16GB+ recommended for KGE processing and local LLM execution).
+- **Disk Space**: At least 8GB of free space to accommodate crawled data, embeddings, and the local `llama3.1` model.
+- **CPU/GPU**: A multi-core CPU is sufficient, but a GPU is highly recommended for faster knowledge graph embeddings and responsive RAG execution.
+
+---
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd Project_web_datamining
+
+# Install dependencies (as stated above)
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 ---
 
-## How to Run
+## How to Run Each Module
+
+The pipeline is split into sequential modules. Run them from the project root:
 
 ```bash
-# Step 1 — Crawl + Extract
+# 1. Crawl + Extract
 python src/crawl/crawler.py
 python src/ie/ner_extraction.py
 
-# Step 2 — Build KB + Align + Expand
+# 2. Build KB + Align to Wikidata + Expand
 python src/kg/kb_construction.py
 python src/kg/kb_expansion.py
 
-# Step 3 — SWRL Reasoning
+# 3. SWRL Reasoning
 python src/reason/create_ontology.py
 python src/reason/swrl_reasoning.py
 
-# Step 4 — KGE (open notebook)
+# 4. KGE (Knowledge Graph Embeddings)
+# Open the Jupyter notebook and run all cells
 jupyter notebook notebooks/TD5_Knowledge_Reasoning.ipynb
+```
 
-# Step 5 — RAG
-ollama serve   # in a separate terminal
+---
+
+## How to Run the RAG Demo
+
+After building the Knowledge Graph and ensuring Ollama is installed:
+
+1. Start the Ollama server (in a separate terminal):
+```bash
+ollama serve
+```
+2. Launch the RAG pipeline:
+```bash
 python src/rag/rag_pipeline.py
 ```
 
+### RAG Demo Screenshot
+
+*(Please insert your actual RAG demo screenshot below to complete this requirement)*
+![RAG Demo Screenshot Placeholder](<insert_screenshot_path_here.png>)
 ---
 
 ## Key Results
