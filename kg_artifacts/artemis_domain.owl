@@ -87,8 +87,8 @@
   <operatedBy rdf:resource="#NASA"/>
   <usesVehicle rdf:resource="#Orion"/>
   <usesVehicle rdf:resource="#SLS"/>
-  <hasCrew rdf:resource="#Victor_Glover"/>
   <hasCrew rdf:resource="#Reid_Wiseman"/>
+  <hasCrew rdf:resource="#Victor_Glover"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Reid_Wiseman">
